@@ -14,10 +14,17 @@ pipeline {
         }
 
         stage('Build & Test') {
+
     steps {
         bat 'mvn clean test'
     }
 }
+
+
+            steps {
+                sh 'mvn clean test'
+            }
+        }
 
 
         stage('Publish Test Results') {
